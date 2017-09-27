@@ -60,6 +60,7 @@
   <link rel="stylesheet" href="css/owl.theme.default.min.css">
   <!-- Theme style  -->
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/YouTubePopUp.css">
 
   <!-- Modernizr JS -->
   <script src="js/modernizr-2.6.2.min.js"></script>
@@ -85,8 +86,7 @@
             <li><a href="#fh5co-team">Nosotros</a></li>
             <li><a href="#fh5co-cta">Noticias</a></li>
             <li><a href="contact.html">Contacto</a></li>
-            <li class="cta"><a href="#" class="video" data-video="https://www.youtube.com/embed/Q52Mtvc8hns" data-toggle="modal"
-                               data-target="#videoModal">Ver Vídeo</a></li>
+            <li class="cta"><a href="https://www.youtube.com/watch?v=Q52Mtvc8hns" class="video">Ver Vídeo</a></li>
           </ul>
         </nav>
       </div>
@@ -360,18 +360,6 @@
   </footer>
 </div>
 
-<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-        <iframe id="iframe" width="100%" height="350" src="" frameborder="0" allowfullscreen></iframe>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- jQuery -->
 <script src="js/jquery.min.js"></script>
 <!-- jQuery Easing -->
@@ -384,20 +372,24 @@
 <script src="js/owl.carousel.min.js"></script>
 <!-- Flexslider -->
 <script src="js/jquery.flexslider.js"></script>
+<script type="text/javascript" src="js/YouTubePopUp.jquery.js"></script>
+
 
 <!-- MAIN JS -->
 <script src="js/main.js"></script>
 
+<script type="text/javascript">
+  jQuery(function(){
+    jQuery("a.video").YouTubePopUp();
+  });
+</script>
+
 <script>
   $(function () {
+    var videoUrl = "";
+
     $(".video").click(function () {
-      var theModal = $(this).data("target"),
-        videoSRC = $(this).attr("data-video"),
-        videoSRCauto = videoSRC + "?modestbranding=1&rel=0&controls=0&showinfo=0&html5=1&autoplay=1";
-      $(theModal + ' iframe').attr('src', videoSRCauto);
-      $(theModal + ' button.close').click(function () {
-        $(theModal + ' iframe').attr('src', videoSRC);
-      });
+      $('#video-modal').fadeIn();
     });
   });
 </script>
