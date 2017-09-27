@@ -384,20 +384,6 @@ h1, h2, h3, h4, h5, h6, figure {
     outline: none;
 }
 
-#fh5co-header h1 a:after {
-    position: absolute;
-    bottom: 6px;
-    right: -8px;
-    content: '';
-    width: 8px;
-    height: 8px;
-    background: #27E1CE;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    border-radius: 50%;
-}
-
 #fh5co-header h1, #fh5co-header nav {
     margin: 38px 0 0 0;
 }
@@ -923,8 +909,14 @@ h1, h2, h3, h4, h5, h6, figure {
     }
 }
 
+.fh5co-staff {
+    padding-bottom: 20px;
+}
+
 .fh5co-staff img {
     margin-bottom: 1.5em;
+    border-radius: 20px;
+    box-shadow: 0 2px 3px #dcdcdc;
 }
 
 .fh5co-staff h3 {
